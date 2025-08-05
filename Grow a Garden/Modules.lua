@@ -1,8 +1,12 @@
 local Module = {}
 Module.__index = Module
 
-local Utility =
-	loadstring(game:HttpGet("https://api.luarmor.net/files/v3/loaders/c46ebc935915f0f0ac0a4ad302e91cc3.lua"))()
+if not Import then
+	error("Import not found")
+	return
+end
+
+local Utility = Import("Web", "Utility.lua")
 
 local BackPack = Utility.BackPack
 local HumanoidRootPart = Utility.HumanoidRootPart
